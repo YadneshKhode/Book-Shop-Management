@@ -11,12 +11,10 @@ public class Cart extends Bill{
     public List<Integer> quant = new ArrayList<Integer>();
     public int noOfItems=0;
     public void updateCart(Item a,int q ){
-      //write your code here
-      //------------
-      //------------
-    	inCart.add(a);
-    	quant.add(q);
-   
+        //write your code here
+        this.noOfItems++;
+        inCart.add(a);
+        quant.add(q);
 
     }
     public int totalAmt=0;
@@ -31,7 +29,11 @@ public class Cart extends Bill{
     public int calcBill() {
     	int total=0;
 //    	write your code here!!!
-//    	----------------------
+//    	---------------------
+        for (int i = 0; i <inCart.size() ; i++) {   
+              total=  total+ inCart.get(i).mrp*quant.get(i);
+        }
+       
     	return total;
     	
     }
